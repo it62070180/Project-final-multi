@@ -1,6 +1,7 @@
 # Project-final-multi
-### Link
-
+### Link codepen, netlify, and youtube
+https://codepen.io/arpo-sithiphap/pen/pojOmbv
+https://projectmulti.netlify.app/
 
 ### make by
 |รหัสนักศึกษา| ชื่อ-นามสกุล | Github |
