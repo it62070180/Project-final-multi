@@ -1,0 +1,336 @@
+<script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+<a-scene>
+    <a-assets>
+    <img id="road" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRUGal45BOtgjqxokjeNBNQ3bpUwvTT_8-X5tRT_qfBhuKLqhOC&usqp=CAU">
+     </a-assets>
+  <a-entity position="0 0 0"  rotation = "0 0 0">
+  <a-camera wasd-controls-enabled="true"  position="0 4 4"></a-camera>
+   </a-entity>
+  
+<!--light--> 
+  <a-entity>
+    <a-entity rotation="0 0 0" animation="property: rotation; to: 0 0 360; loop: true; dur: 100000">
+    <a-entity light="type: ambient; intensity: 0.6;"></a-entity>
+    <a-entity light="type: directional; castShadow: true; intensity: 1; shadowCameraVisible: false; angle:0; shadowCameraRight: 20; shadowCameraBottom: -20; shadowCameraLeft: -20; shadowCameraTop: 20;"  position="-5 10      10" animation="property:light.angle; to:10; dur:1000;  loop:true;  dir:alternate;"></a-entity>
+   </a-entity>
+  </a-entity>
+  
+  <a-entity shadow="receive: true">
+    <!--  ตัวจัตุรัสเทียนอันเหมิน -->
+    <a-entity position="0 0 -8">
+      <!--  หลังคาชั้นบน (+0.55 จากแกน y หลังคาชั้นล่าง) -->
+      <a-entity position="0 3.55 0">
+        <a-box position="0 0.75 0" width="3.5" depth="5.0" height="0.1" color="hsl(20, 100%, 55%)"></a-box>
+        <a-box position="0 0.65 0" width="3.6" depth="5.1" height="0.1" color="hsl(20, 100%, 70%)"></a-box>
+        <a-box position="0 0.55 0" width="3.8" depth="5.2" height="0.1" color="hsl(20, 100%, 65%)"></a-box>
+        <a-box position="0 0.45 0" width="4.0" depth="5.3" height="0.1" color="hsl(20, 100%, 60%)"></a-box>
+        <a-box position="0 0.35 0" width="4.6" depth="5.4" height="0.1" color="hsl(20, 100%, 55%)"></a-box>
+        <a-box position="0 0.25 0" width="5.0" depth="5.5" height="0.1" color="hsl(20, 100%, 50%)"></a-box>
+        <a-ring   position="0 0.0 2.52" radius-inner="0.18" radius-outer="0.20" color="hsl(40, 100%, 50%)"></a-ring>
+        <a-circle position="0 0.0 2.51" radius="0.2" color="hsl(0, 100%, 50%)"></a-circle>
+        <a-box position="0 0.0 0" width="3.9" depth="5" height="1" color="hsl(70, 30%, 50%)"></a-box>
+      </a-entity>
+      <!-- หลังคาชั้นล่าง -->
+      <a-entity position="0 3 0">
+        <a-box position="0 0.15 0" width="5.5" depth="6.5" height="0.1" color="hsl(20, 100%, 65%)"></a-box>
+        <a-box position="0 0.10 0" width="6.0" depth="6.6" height="0.1" color="hsl(20, 100%, 60%)"></a-box>
+        <a-box position="0 0.05 0" width="6.5" depth="6.7" height="0.1" color="hsl(20, 100%, 55%)"></a-box>
+        <a-box position="0 0.0 0" width="7.0" depth="6.8" height="0.1" color="hsl(20, 100%, 50%)"></a-box>
+      </a-entity>
+
+      <!--  ชั้น 2 -->
+      <a-entity position="0 2.5 0">
+        <!-- แผงกั้นหน้า-หลัง -->
+        <a-plane position="0 0.3 2.95" width="6" height="0.3" color="hsl(70, 30%, 50%)" side="double"></a-plane>
+        <a-plane position="0 0.3 -2.95" width="6" height="0.3" color="hsl(70, 30%, 50%)" side="double"></a-plane>
+        <!-- แผงกั้นด้านซ้าย-ขวา -->
+        <a-plane position="-2.95 0.3 0" width="6" height="0.3" color="hsl(70, 30%, 50%)" side="double" rotation="0 90 0"></a-plane>
+        <a-plane position="2.95 0.3 0" width="6" height="0.3" color="hsl(70, 30%, 50%)" side="double" rotation="0 90 0"></a-plane>
+
+        <!--   เสาด้านหน้า   -->
+        <a-cylinder position="-2.95 0 2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-2.00 0 2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-1.00 0 2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 1 0 2.95"    radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 2 0 2.95"    radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 2.95 0 2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+
+        <!--   เสาด้านหลัง   -->
+        <a-cylinder position="-2.95 0 -2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-2.00 0 -2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-1.00 0 -2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 1 0 -2.95"    radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 2 0 -2.95"    radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position=" 2.95 0 -2.95" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+
+        <!--   เสาด้านซ้าย   -->
+        <a-cylinder position="-2.95 0  2" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-2.95 0  1" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-2.95 0 -1" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="-2.95 0 -2" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+
+        <!--   เสาด้านขวา   -->
+        <a-cylinder position="2.95 0  2" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="2.95 0  1" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="2.95 0 -1" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+        <a-cylinder position="2.95 0 -2" radius="0.05" color="hsl(0, 30%, 50%)"></a-cylinder>
+
+        <!--   ประตูใหญ่-หน้า  -->
+        <a-box position="0 -0.5 0" width="1" depth="5.01" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--   ประตูเล็ก-หน้า-ซ้าย  -->
+        <a-box position="-1.5 -0.5 0" width="0.5" depth="5.01" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--   ประตูเล็ก-หน้า-ขวา  -->
+        <a-box position=" 1.5 -0.5 0" width="0.5" depth="5.01" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--   ประตูใหญ่-ข้าง  -->
+        <a-box position="0 -0.5 0" width="5.01" depth="1" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!-- ประตูใหญ่-ข้าง-แรก -->
+        <a-box position="0 -0.5 -1.5" width="5.01" depth="0.5" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--  ประตูใหญ่-ข้าง-สอง -->
+        <a-box position="0 -0.5  1.5" width="5.01" depth="0.5" height="1" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!-- ตัวบ้านชั้น 2 -->
+        <a-box position="0 0 0" width="5" depth="5" height="1" color="hsl(30, 30%, 50%)"></a-box>
+
+      </a-entity>
+
+      <!--  ชั้น 1 -->
+      <a-entity>
+        <!--  ประตูหน้า -->
+        <a-box position="0 0 0" width="1.5" depth="6.01" height="2" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--  ประตูข้าง -->
+        <a-box position="0 0 0" width="6.01" depth="1.5" height="2" color="hsl(0, 0%, 0%)"></a-box>
+
+        <!--   ตัวบ้านชั้น 1 -->
+        <a-box position="0 0 0" width="6" depth="6" height="4" color="hsl(30, 20%, 50%)"></a-box> 
+      </a-entity>
+      <!-- พื้นเขียว -->
+      <a-plane width="30" height="31" rotation="-90 0 0" position="0 0 0" color="green"></a-plane> 
+
+    </a-entity>
+    
+   <!--กําแพงหน้า-->
+   <a-entity position="1 0.5 1" shadow="receive: true">
+    <!--กําแพง-->
+    <a-box position="-1 0 -4"  width = "9" height = "3.5" depth = "0.5" rotation="0 0 0" src="https://i.imgur.com/12BkGx0.png"></a-box>
+    <!--ป้ายชื่อซ้าย-->
+    <a-box position="-3.5 1.2 -3.75" width="3" height="0.5" depth="0.1" src="https://i.imgur.com/aNLNAhO.png"></a-box>
+    <!--ป้ายชื่อขวา-->
+    <a-box position="1.5 1.2 -3.75" width="3" height="0.5" depth="0.1" src="https://i.imgur.com/f3Nq7dn.jpg"></a-box>
+    <!--กลาง-->
+    <a-box position="-1 1.3 -3.75" height="0.7" width="0.7" depth = "0.1" src = "https://i.imgur.com/oa6RovP.jpg"depth=0.55></a-box>
+    <!--ประตูซ้าย-->
+    <a-box position="-4.5 -0 -4" height="1" depth=0.55 width="0.8" color="black"></a-box>
+    <!--ประตูกลาง-->
+    <a-box position="-1 0 -4" height="1" depth=0.55 width="1" color="black"></a-box>
+    <!--ประตูขวา-->
+    <a-box position="2.5 -0 -4" height="1" depth=0.55 width="0.8" color="black"></a-box>
+   </a-entity>
+    
+    <!--กําแพงขวา-->
+   <a-entity position="5.85 0 -3.75" rotation="0 0" shadow="receive: true">
+     <a-box position="-1 1 -4"  height = "2.5" depth ="10" width = "0.7" rotation="0 0 0"                  src="https://i.imgur.com/12BkGx0.png"></a-box>
+    </a-entity>
+      <!--กําแพงซ้าย-->
+   <a-entity position="-3.85 0 -3.75" rotation="0 0" shadow="receive: true">
+     <a-box position="-1 1 -4"  height = "2.5" depth =  "10" width = "0.7" rotation="0 0 0"                  src="https://i.imgur.com/12BkGx0.png"></a-box>
+    </a-entity>
+     <!--กําแพงหลัง-->
+    <a-entity position="1 0.5 1" shadow="receive: true">
+      <a-box position="-1 0 -14"  height = "3.5" depth = "0.5" width = "10.4" rotation="0 0 0" src="https://i.imgur.com/12BkGx0.png"></a-box>
+    </a-entity>
+    
+    <!--พื้นปูน Road-->
+    <a-entity position="0 1.5 -6.5">
+       <!--พื้นซ้ายสุด-->
+        <a-box src="#road" position="-3.5 -1.4 8.5" width="0.8" depth="11" height="0.1" ></a-box>
+        <!--พื้นซ้าย + เสา-->
+        <a-entity position="-1.5 -1.4 8.5">
+          <a-box src="#road" width="0.5" depth="11" height="0.1"></a-box>
+          <a-box width="0.05" depth="10" height="0.05" color="#999" position="0 0.4 0"></a-box>
+          <a-box width="0.05" depth="10" height="0.12" color="#999" position="0 0.15 0"></a-box>
+          <a-entity id="เสา" position="0 0 -4">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -3">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -2">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -1">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 0">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 1">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 2">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 3">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 4">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 5">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+        </a-entity>
+        <!--พื้นกลาง-->
+        <a-box src="#road" position="0 -1.4 8.5" width="1" depth="11" height="0.1"></a-box>
+        <!--พื้นขวา + เสา-->
+        <a-entity position="1.5 -1.4 8.5">
+          <a-box src="#road"  width="0.5" depth="11" height="0.1" ></a-box>
+          <a-box width="0.05" depth="10" height="0.05" color="#999" position="0 0.4 0"></a-box>
+          <a-box width="0.05" depth="10" height="0.12" color="#999" position="0 0.15 0"></a-box>
+          <a-entity id="เสา" position="0 0 -4">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -3">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -2">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 -1">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 0">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 1">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 2">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 3">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 4">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+          <a-entity id="เสา" position="0 0 5">
+            <a-sphere radius="0.05" position="0 0.6 0" color="#999"></a-sphere>
+            <a-box width="0.1" depth="0.1" height="1" color="#999"></a-box>
+            <a-box width="0.05" depth="0.05" height="1.2" color="#999"></a-box>
+          </a-entity>
+        </a-entity>
+        <!--พื้นขวาสุด-->
+        <a-box src="#road" position="3.5 -1.4 8.5" width="0.8" depth="11" height="0.1" ></a-box>
+        <!--พื้น background-->
+        <a-box src="#road" position="0 -1.45 8.5"width="10" depth="11" height="0.1"></a-box>
+      </a-entity>
+    
+    <!--เมือง--> 
+     <a-entity position="0 3 0">
+         <!--เมืองซ้าย1-->
+        <a-entity>
+          <a-box position="17 -1 -10" height="7" width="3" depth="10"></a-box>
+         </a-entity>
+         <!--เมืองซ้าย2-->
+        <a-entity>
+          <a-box position="17 -1 2" height="9" width="3" depth="7"></a-box>
+         </a-entity>
+        <!--เมืองซ้าย3-->
+        <a-entity>
+          <a-box position="17 -1 8.5" height="7" width="3" depth="3"></a-box>
+         </a-entity>
+         <!--เมืองขวา1-->
+        <a-entity>
+          <a-box position="-17 -1 -10" height="7" width="3" depth="10"></a-box>
+         </a-entity>
+         <!--เมืองขวา2-->
+        <a-entity>
+          <a-box position="-17 -1 2" height="9" width="3" depth="7"></a-box>
+         </a-entity>
+       <!--เมืองขวา3-->
+        <a-entity>
+          <a-box position="-17 -1 8.5" height="7" width="3" depth="3"></a-box>
+         </a-entity>
+       <!--เมืองหลัง1-->
+        <a-entity>
+          <a-box position="-10 -1 -26" height="10" width="8" depth="4"></a-box>
+         </a-entity>
+       <!--เมืองหลัง2-->
+        <a-entity>
+          <a-box position="9 -1 -30" height="8" width="8" depth="8"></a-box>
+         </a-entity>
+       <!--เมืองหน้า1-->
+        <a-entity>
+         <a-box position="-10 -1 15" height="8" width="8" depth="6"></a-box>
+        </a-entity>
+      <!--เมืองหน้า2-->
+       <a-entity>
+         <a-box position="9 -1 12" height="10" width="6" depth="3"></a-box>
+       </a-entity>
+      </a-entity>
+
+    <!--หญ้า-->
+    <a-entity>
+      
+      <!--ข้างจัตุรัส-->
+      <a-box color="#AC5" width="0.8" height="1"  depth="10" position="5.4 0 2.5"></a-box>
+      <a-box color="#AC5" width="0.8" height="1"  depth="10" position="-5.4 0 2.5"></a-box>
+      
+      <!--รอบเขต-->
+      <a-box color="#7F2" width="0.8" height="1"  depth="31" position="-14 0 -8"></a-box>
+      <a-box color="#7F2" width="0.8" height="1"  depth="31" position=" 14 0 -8"></a-box>
+      <a-box color="#7F2" width="0.8" height="1"  depth="29" position=" 0 0 -23.5" rotation="0 90 0"></a-box>
+      
+    </a-entity>
+    
+    <!-- พื้นซีเมน -->
+    <a-plane width="1000" height="1000" rotation="-90 0 0" position="0 -0.1 0" color="#888"></a-plane> 
+    
+    <!--  ฟ้า -->
+    <a-sky color="#8BF"></a-sky>
+  </a-entity>
+</a-scene>
